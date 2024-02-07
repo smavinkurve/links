@@ -1,11 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&display=swap');
+/* typeface files */
+@font-face {
+    font-family: Clash Display Semibold;
+    src: url(fonts/ClashDisplay-Semibold.otf);
+}
+
+@font-face {
+    font-family: Clash Display Light;
+    src: url(fonts/ClashDisplay-Light.otf);
+}
+
 
 :root {
-    --heading-font: 'DM Mono', monospace;
+    --heading-font: 'Clash Display Semibold';
+    --body-font:'Clash Display Light';
 
-    --body-font: 'DM Mono', monospace;
-
-    --background-gradient: linear-gradient(var(--white), var(--cream));
 
     --typography-base: 16px;
     --spacing: 10px;
@@ -13,13 +21,34 @@
 
 h1 {
     font-family: var(--heading-font);
-    font-size: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 300px;
+}
+.fixed-h1 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    margin: 0;
+    z-index: 1;
 }
 
-main {
+.block {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.image {
+    display: inline-block;
+    height: 100%;
+    margin-right: 20px; 
+    animation: scrollImages 10s linear infinite;
+}
+/* main {
     display: flex;
     flex-direction: row;
     width: 80%;
-}
+} */
