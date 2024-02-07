@@ -14,41 +14,100 @@
     --heading-font: 'Clash Display Semibold';
     --body-font:'Clash Display Light';
 
-
-    --typography-base: 16px;
+    --font-size-base: 16px;
+    --line-height: 150%;
     --spacing: 10px;
+
+    --dark-grey:#0B0B0B;
+    --orange: #FF7245;
+    --dark-orange:#EB2E00;
 }
 
 h1 {
     font-family: var(--heading-font);
-    font-size: 300px;
+    font-size: calc(4* var(--font-size-base));
 }
 .fixed-h1 {
     position: fixed;
-    top: 50%;
+    top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     margin: 0;
     z-index: 1;
+    color: var(--dark-orange);
+}
+
+h2 {
+    font-family: var(--heading-font);
+    font-size: calc(2* var(--font-size-base));
+}
+
+.description {
+    font-family: var(--body-font);
+    font-size: calc(0.8* var(--font-size-base));
+    line-height: var(--line-height);
 }
 
 .block {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    white-space: nowrap;
+    margin-left: auto;
+	margin-right: auto;
+	/* max-width: 1400px; */
+	width: 70%;
+	height: auto;
+	display: flex;
+    flex-direction: column;
+	align-items: center;
+	flex-wrap: wrap;
+    z-index: 4;
+}
+.metadata {
+padding-bottom: 1em;
 }
 
-.image {
-    display: inline-block;
-    height: 100%;
-    margin-right: 20px; 
-    animation: scrollImages 10s linear infinite;
+.image, .link {
+    margin-left: auto;
+	margin-right: auto;
+    /* width: 50%; */
+    z-index: 2;
 }
-/* main {
-    display: flex;
-    flex-direction: row;
-    width: 80%;
-} */
+
+img {
+    display: block;
+	width: 80%;
+}
+
+
+/* ******************************************************************* */
+/* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
+@media (min-width: 700px) {
+    h1 {
+        font-size: calc(18* var(--font-size-base));
+    }
+
+    .fixed-h1 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: 0;
+    }
+   
+    h2 {
+        font-size: calc(5* var(--font-size-base));
+    }
+
+    .block {
+        width: 60%;
+
+    }
+
+    .description {
+        font-family: var(--body-font);
+        font-size: calc(1.2* var(--font-size-base));
+        line-height: var(--line-height);
+    }
+
+
+}
