@@ -19,6 +19,7 @@
     --spacing: 10px;
 
     --dark-grey:#0B0B0B;
+    --white: #FFFFFF;
     --orange: #FF7245;
     --dark-orange:#EB2E00;
 }
@@ -52,7 +53,6 @@ h2 {
 .block {
     margin-left: auto;
 	margin-right: auto;
-	/* max-width: 1400px; */
 	width: 70%;
 	height: auto;
 	display: flex;
@@ -62,13 +62,15 @@ h2 {
     z-index: 4;
 }
 .metadata {
-padding-bottom: 1em;
+    padding-bottom: 1em;
+    /* padding: 20px;
+    background-color: var(--white); */
+    z-index: 6;
 }
 
 .image, .link {
     margin-left: auto;
 	margin-right: auto;
-    /* width: 50%; */
     z-index: 2;
 }
 
@@ -95,12 +97,15 @@ img {
     }
    
     h2 {
-        font-size: calc(5* var(--font-size-base));
+        font-size: calc(2* var(--font-size-base));
     }
 
     .block {
-        width: 60%;
+        width: 70%;
+    }
 
+    .metadata {
+        width: 60%;
     }
 
     .description {

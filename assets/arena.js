@@ -7,7 +7,7 @@ document.head.appendChild(markdownIt)
 
 
 // Okay, Are.na stuff!
-let channelSlug = 'useless' // The “slug” is just the end of the URL
+let channelSlug = 'useless-nssbbq1unzk' // The “slug” is just the end of the URL
 
 
 
