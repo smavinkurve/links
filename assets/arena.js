@@ -10,7 +10,6 @@ document.head.appendChild(markdownIt)
 let channelSlug = 'useless-nssbbq1unzk' // The “slug” is just the end of the URL
 
 
-
 // First, let’s lay out some *functions*, starting with our basic metadata:
 let placeChannelInfo = (data) => {
 	// Target some elements in your HTML:
@@ -38,7 +37,7 @@ let renderBlock = (block) => {
 		let linkItem =
 			`
 			<li>
-				<p><em>Link</em></p>
+				// <p><em>Link</em></p>
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">

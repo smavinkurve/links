@@ -32,11 +32,26 @@ h1 {
     position: fixed;
     top: 10%;
     left: 50%;
+    text-transform: capitalize;
     transform: translate(-50%, -50%);
     text-align: center;
     margin: 0;
     z-index: 1;
     color: var(--dark-orange);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    fle
+}
+
+#channel-description {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    text-transform: capitalize;
+    transform: translate(-50%, -50%);
 }
 
 h2 {
