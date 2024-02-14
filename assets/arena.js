@@ -59,7 +59,7 @@ let renderBlock = (block) => {
 		`
 		<li class="block block--image">
 			<figure>
-				<img src=" ${block.image.url} " alt=" ${block.title} by ${block.author}">
+				<img src=" ${block.image.large.url}" alt=" ${block.title} by ${block.author}">
 				<p> ${block.title} </p>
 			</figure>
 		</li>
