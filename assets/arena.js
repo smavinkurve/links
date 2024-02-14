@@ -36,29 +36,46 @@ let renderBlock = (block) => {
 	if (block.class == 'Link') {
 		let linkItem =
 			`
-			<li>
-				// <p><em>Link</em></p>
+			<li class="block block--link">
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
+					<a href="${ block.source.url }">
 					<img src="${ block.image.original.url }">
+					<a>
 				</picture>
-				<h3>${ block.title }</h3>
-				${ block.description_html }
+				<h2>${ block.title }</h2>
+				${ block.description_html}
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
+			console.log (block)
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
 	// Images!
 	else if (block.class == 'Image') {
-		// …up to you!
+		let imageItem =
+		`
+		<li class="block block--image">
+			<figure>
+				<img src=" ${block.image.url} " alt=" ${block.title} by ${block.author}">
+				<p> ${block.title} </p>
+			</figure>
+		</li>
+		`
+	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
 	// Text!
 	else if (block.class == 'Text') {
-		// …up to you!
+		let textBlock =
+		`
+			<li class="block block--text">
+				${block.content_html}
+			</li>
+		`
+		channelBlocks.insertAdjacentHTML('beforeend', textBlock)
 	}
 
 	// Uploaded (not linked) media…
@@ -82,7 +99,18 @@ let renderBlock = (block) => {
 
 		// Uploaded PDFs!
 		else if (attachment.includes('pdf')) {
-			// …up to you!
+			let pdfItem =
+			`
+			<li class="block block--pdf">
+				<a href=" ${block.attachment.url}">
+					<figure>
+						<img src="${block.image.large.url}" alt="${block.title}">
+						<h2> ${block.title} </h2>
+					</figure>
+				</a>	
+			</li>
+			`
+			channelBlocks.insertAdjacentHTML('beforeend', pdfItem)
 		}
 
 		// Uploaded audio!
@@ -148,7 +176,7 @@ fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-stor
 
 		// Loop through the `contents` array (list), backwards. Are.na returns them in reverse!
 		data.contents.reverse().forEach((block) => {
-			// console.log(block) // The data for a single block
+			console.log(block) // The data for a single block
 			renderBlock(block) // Pass the single block data to the render function
 		})
 
