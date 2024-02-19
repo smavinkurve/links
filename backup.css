@@ -14,21 +14,9 @@
     src: url(fonts/NeueMontreal-Bold.otf);
 }
 
-@font-face {
-    font-family: Pencerio;
-    src: url(fonts/Pencerio-Hairline.otf);
-}
-
-@font-face {
-    font-family: Segment;
-    src: url(fonts/Segment-Regular.otf);
-}
-
 
 :root {
-    /* --title-font: 'Neue Montreal Bold'; */
-    --title-font: 'Segment'; 
-    /* --title-font: 'Pencerio'; */ 
+    --title-font: 'Neue Montreal Bold';
     --base-font: 'Neue Montreal Regular';
     --body-font:'Neue Montreal Light';
 
@@ -45,14 +33,6 @@
 /* ADD A BACKGROUND COLOR */
 body{
     background-color: beige;
-    padding: calc(2* var(--spacing));
-}
-
-header {
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    z-index: 4;
 }
 
 h1 {
@@ -62,32 +42,34 @@ h1 {
 
 .fixed-h1 {
     position: fixed;
-    text-transform: capitalize;
+    top: 10%;
+    left: 50%;
+    text-transform: uppercase;
+    transform: translate(-50%, -50%);
+    text-align: center;
     margin: 0;
     z-index: 4;
-    color: var(--dark-grey);
+    color: var(--dark-orange);
 }
 
 aside {
-    font-family: var(--body-font);
-    font-size: calc(0.8* var(--font-size-base));
-    line-height: var(--line-height);
-    color: var(--dark-grey);
-    position: fixed;
-    z-index: 4;
-    width: 20%;
-    text-align: left;
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
 }
 
 
-/* #channel-description {
+#channel-description {
     font-family: var(--base-font);
     font-size: calc(1* var(--font-size-base));
-    position: sticky;
+    position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
-} */
+}
 
 h2 {
     font-family: var(--base-font);
@@ -141,29 +123,45 @@ footer {
 }
 
 
+/* .description {
+    font-family: var(--body-font);
+    font-size: calc(0.8* var(--font-size-base));
+    line-height: var(--line-height);
+} */
+
+/* .metadata {
+    padding-bottom: 1em;
+    z-index: 6;
+} */
+
+/* .image, .link {
+    margin-left: auto;
+	margin-right: auto;
+    z-index: 2;
+}
+
+img {
+    display: block;
+	width: 80%;
+} */
 
 
 /* ******************************************************************* */
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
 @media (min-width: 700px) {
     h1 {
-        font-size: calc(10* var(--font-size-base));
+        font-size: calc(12* var(--font-size-base));
     }
 
- aside {
-        font-size: calc(1.2* var(--font-size-base));
-        /* width: 24%; */
-        padding-top: 10em;
+    .fixed-h1 {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        margin: 0;
     }
-
-    header {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        width: 100%;
-        /* align-items: left; */
-    }
-
+   
     h2 {
         font-size: calc(3* var(--font-size-base));
     }
@@ -183,6 +181,12 @@ footer {
 
     .metadata {
         width: 60%;
+    }
+
+    .description {
+        font-family: var(--body-font);
+        font-size: calc(1.2* var(--font-size-base));
+        line-height: var(--line-height);
     }
 
 
