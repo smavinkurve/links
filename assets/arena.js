@@ -40,8 +40,8 @@ let renderBlock = (block) => {
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<a href="${ block.source.url }">
-					<img src="${ block.image.original.url }">
+					<a href="${ block.source.url}">
+					<img src="${block.image.original.url }">
 					<a>
 				</picture>
 				<h2>${ block.title }</h2>
@@ -49,7 +49,6 @@ let renderBlock = (block) => {
 				<p><a href="${ block.source.url }">See the original ↗</a></p>
 			</li>
 			`
-			console.log (block)
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 

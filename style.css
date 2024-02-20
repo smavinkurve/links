@@ -24,13 +24,17 @@
     src: url(fonts/Segment-Regular.otf);
 }
 
+@font-face {
+    font-family: Apfel Grotesk Regular;
+    src: url(fonts/ApfelGrotezk-Regular.otf);
+}
 
 :root {
     /* --title-font: 'Neue Montreal Bold'; */
     --title-font: 'Segment'; 
     /* --title-font: 'Pencerio'; */ 
     --base-font: 'Neue Montreal Regular';
-    --body-font:'Neue Montreal Light';
+    --quote-font: 'Apfel Grotesk Regular';
 
     --font-size-base: 16px;
     --line-height: 150%;
@@ -42,9 +46,15 @@
     --dark-orange:#EB2E00;
 }
 
+
+/* DISPLAY/ HIDDEN THINGS */
+#channel-count {
+    display: none;
+}
+
 /* ADD A BACKGROUND COLOR */
 body{
-    background-color: beige;
+    background-color: rgb(237, 233, 222);
     padding: calc(2* var(--spacing));
 }
 
@@ -75,24 +85,37 @@ aside {
     color: var(--dark-grey);
     position: sticky;
     z-index: 4;
-    width: 20%;
+    width: 80%;
     text-align: left;
+    padding-top: 7em;
 }
 
+ul {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: calc(2.5* var(--spacing));
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 3em;
+  }
+  
+  ul li {
+    width: 20em;
+    height: 20em;
+    overflow: hidden;
+    /* border: 2px solid var(--dark-grey); */
+    transition: all 0.5s linear;
+  }
+  
+  ul li:hover {
+    transform: scale(1.1);
+  }
 
-/* #channel-description {
-    font-family: var(--base-font);
-    font-size: calc(1* var(--font-size-base));
-    position: sticky;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 h2 {
     font-family: var(--base-font);
     font-size: calc(2* var(--font-size-base));
-    /* text-transform: uppercase; */
     padding-top: 1em;
     padding-bottom: 0.5em;
 }
@@ -104,37 +127,34 @@ p {
 }
 
 
-.container {
-    display: grid;
-    grid-template-columns: 1fr, 1fr, 1fr;
-}
-
 .block {
-    /* margin-left: auto;
-	margin-right: auto;
-	width: 75%;
-	display: flex;
-    flex-direction: column;
-	align-items: center; */
-    /* display: grid;
-    columns: 5; */
-    gap: var(--spacing);
+    /* gap: var(--spacing); */
     z-index: 1;
-    padding-bottom: 3em;
-    padding-top: 2em;
+    /* padding-bottom: 3em;
+    padding-top: 2em; */
 }
 
 
 .block--text {
-    /* width: 80%; */
-    font-family: var(--heading-font);
-    font-size: calc(2* var(--font-size-base));
+    width: 90%;
+    padding: 1em;
+    font-family: var(--quote-font);
+    font-size: calc(2.5* var(--font-size-base));
     line-height: calc(1.2* var(--line-height));
-    color: var(--white);
-    background-color: var(--dark-grey);
-    padding: 3em;
-    margin-top: 2em;
-    margin-bottom: 2em;
+    color: var(--dark-grey);
+    background-color: var(--white);
+    transition: none;
+    align-items: center;
+    width: auto;
+    height: auto;
+}
+
+.block--text p {
+    text-align: left;
+}
+
+.block--text:hover {
+    transform: none;
 }
 
 footer {
@@ -154,7 +174,7 @@ footer {
         font-size: calc(10* var(--font-size-base));
     }
 
- aside {
+    aside {
         font-size: calc(0.5* var(--font-size-base));
         width: 30%;
         padding-top: 25em;
@@ -169,10 +189,6 @@ footer {
         /* align-items: left; */
     }
 
-    .container {
-        display: grid;
-        grid-template-columns: 1fr, 1fr, 1fr;
-    }
 
     h2 {
         font-size: calc(3* var(--font-size-base));
@@ -183,18 +199,15 @@ footer {
     }
     
     .block--text {
-        font-family: var(--heading-font);
-        font-size: calc(3* var(--font-size-base));
+        display: block;
+        font-size: calc(3.6* var(--font-size-base));
+        padding: 3em;
     }
 
-    /* .blocks {
-        width: 70%;
-    } */
-
-    .metadata {
-        width: 60%;
+    .block--text p {
+        width: 40%;
+        text-align: left;
     }
-
 
 
 }
