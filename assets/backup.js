@@ -52,19 +52,17 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// Images! (SOME CHATGPT)
+	// Images!
 	else if (block.class == 'Image') {
 		let imageItem =
-	    `
-        <li class="block block--image">
-            <div class="lightbox-trigger" onclick="openLightbox('${block.image.original.url}', '${block.title}')">
-                <figure>
-                    <img src="${block.image.large.url}" alt="${block.title} by ${block.author}">
-                    <p>${block.title}</p>
-                </figure>
-            </div>
-        </li>
-        `
+		`
+		<li class="block block--image">
+			<figure>
+				<img src=" ${block.image.large.url}" alt=" ${block.title} by ${block.author}">
+				<p> ${block.title} </p>
+			</figure>
+		</li>
+		`
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
@@ -165,32 +163,6 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 		</address>
 		`
 	container.insertAdjacentHTML('beforeend', userAddress)
-}
-
-
-
-// UNFORTUNATELY ENTIRELY CHATGPT
-// Function to open lightbox 
-function openLightbox(imageUrl, title) {
-    // Create a lightbox container
-    let lightbox = document.createElement('div');
-    lightbox.classList.add('lightbox');
-
-    // Create an image element
-    let image = document.createElement('img');
-    image.src = imageUrl;
-    image.alt = title;
-
-    // Add the image to the lightbox container
-    lightbox.appendChild(image);
-
-    // Append the lightbox container to the body
-    document.body.appendChild(lightbox);
-
-    // Close the lightbox on click
-    lightbox.addEventListener('click', function () {
-        document.body.removeChild(lightbox);
-    });
 }
 
 
