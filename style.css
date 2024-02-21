@@ -1,10 +1,5 @@
 /* typeface files */
 @font-face {
-    font-family: Neue Montreal Light;
-    src: url(fonts/NeueMontreal-Light.otf);
-}
-
-@font-face {
     font-family: Neue Montreal Regular;
     src: url(fonts/NeueMontreal-Regular.otf);
 }
@@ -42,6 +37,7 @@
 
     --dark-grey:#0B0B0B;
     --white: #FFFFFF;
+    --beige: rgb(237, 233, 222);
     --orange: #FF7245;
     --dark-orange:#EB2E00;
 }
@@ -52,10 +48,9 @@
     display: none;
 }
 
-/* ADD A BACKGROUND COLOR */
 body{
-    background-color: rgb(237, 233, 222);
-    padding: calc(2* var(--spacing));
+    background-color: var(--beige);
+    scroll-behavior: smooth;
 }
 
 header {
@@ -80,14 +75,14 @@ h1 {
 
 aside {
     font-family: var(--body-font);
-    font-size: calc(0.8* var(--font-size-base));
+    font-size: calc(0.5* var(--font-size-base));
     line-height: var(--line-height);
     color: var(--dark-grey);
     position: sticky;
     z-index: 4;
     width: 80%;
     text-align: left;
-    padding-top: 7em;
+    padding-top: 10em;
 }
 
 ul {
@@ -108,8 +103,9 @@ ul {
     transition: all 0.5s linear;
   }
   
+
   ul li:hover {
-    transform: scale(1.1);
+    transform: scale(1.05);
   }
 
 
@@ -157,19 +153,43 @@ p {
     transform: none;
 }
 
+img {
+    object-fit: cover;
+}
+
 footer {
     background-color: var(--dark-grey);
-    color: var(--white);
+    color: var(--dark-grey);
     padding-top: 1em;
     padding-bottom: 2em;
 }
 
 
+/* May need a tablet media query */
+    @media (min-width: 700px) {
+        h1 {
+            font-size: calc(6* var(--font-size-base));
+        }
 
+        aside {
+            font-size: calc(1* var(--font-size-base));
+            width: 40%;
+            padding-top: 8em;
+        }
+        
+        ul li {
+            width: 15em;
+            height: 15em;
+          }
+    }
 
 /* ******************************************************************* */
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
-@media (min-width: 700px) {
+@media (min-width: 1160px) {
+    body {
+        cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>❗</text></svg>") 16 0,auto; /*!emojicursor.app*/
+    }
+
     h1 {
         font-size: calc(10* var(--font-size-base));
     }
@@ -189,24 +209,56 @@ footer {
         /* align-items: left; */
     }
 
+    ul li {
+        width: 22em;
+        height: 22em;
+      }
 
     h2 {
         font-size: calc(3* var(--font-size-base));
+        color: var(--white);
     }
 
     p {
         font-size: calc(1.3* var(--font-size-base));
     }
     
+    /* COLOR OVERLAY + HOVERS */
     .block--text {
         display: block;
         font-size: calc(3.6* var(--font-size-base));
         padding: 3em;
+        color: var(--white);
+    }
+
+    .block--text:hover {
+        color: var(--dark-grey);
     }
 
     .block--text p {
         width: 40%;
         text-align: left;
+    }
+
+    .block--link, .block--image, .block--pdf, .block--video {
+        background-color: var(--white);
+    }
+
+    .block--image {
+        cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌟</text></svg>") 16 0,auto; /*!emojicursor.app*/
+    }
+
+    .block--pdf {
+        cursor:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🚀</text></svg>") 16 0,auto; /*!emojicursor.app*/
+    }
+    
+    img {
+        object-fit: cover;
+        opacity: 0.01;
+    }
+    
+    img:hover {
+        opacity: 1;
     }
 
 
