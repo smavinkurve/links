@@ -42,13 +42,24 @@
     --dark-orange:#EB2E00;
 }
 
+/* DISPLAY/ HIDDEN THINGS */
+#channel-count {
+    display: none;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     font-family: var(--title-font);
     font-size: calc(4* var(--font-size-base));
+    position: fixed;
 }
 
 .fixed-h1 {
-    position: fixed;
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -63,7 +74,7 @@ aside {
     font-size: calc(0.5* var(--font-size-base));
     line-height: calc(1.5* var(--font-size-base));
     color: var(--dark-grey);
-    position: sticky;
+    position: fixed;
     z-index: 4;
     width: 80%;
     text-align: left;
@@ -72,10 +83,9 @@ aside {
 
 .collection {
     font-size: calc(1* var(--font-size-base));
-    position: relative;
     top: 50%;
-    transform: translateY(20px);
     text-align: center;
+    position: fixed;
 }
 
 p {
@@ -84,8 +94,19 @@ p {
     line-height: var(--line-height);
 }
 
+footer {
+    color: var(--dark-grey);
+    text-align: center;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 3em;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
 
+/* ***************************************************************** */
 /* May need a tablet media query */
 @media (min-width: 700px) {
     h1 {
@@ -107,19 +128,19 @@ p {
 /* ******************************************************************* */
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
 @media (min-width: 1160px) {
-body {
+header{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
 }
+
 
 h1 {
     font-size: calc(10* var(--font-size-base));
 }
 
 .fixed-h1 {
-    position: fixed;
-    top: 45%;
+    top: 38%;
     left: 50%;
 }
 
@@ -129,8 +150,7 @@ aside {
     line-height: calc(2* var(--font-size-base));
     width: 48%;
     margin: 2em;
-    position: fixed;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -138,28 +158,9 @@ aside {
 
 .collection {
     font-size: calc(1.6* var(--font-size-base));
-    position: relative;
-    top: 80%;
+    top: 65%;
 }
 
-/* .page-navigation {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 3em;
-    margin-top: 30%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.collection-button {
-    padding: 1em;
-    border: solid;
-    border-radius: 0.5em;
-    border-color: var(--dark-grey);
-    color: var(--dark-grey);
-
-} */
 
 h2 {
     font-size: calc(3* var(--font-size-base));
