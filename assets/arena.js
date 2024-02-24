@@ -53,6 +53,7 @@ let renderBlock = (block) => {
 	}
 
 	// Images! (SOME CHATGPT)
+	// ** Removed // <p>${block.title}</p> from this  block
 	else if (block.class == 'Image') {
 		let imageItem =
 	    `
@@ -60,7 +61,6 @@ let renderBlock = (block) => {
             <div class="lightbox-trigger" onclick="openLightbox('${block.image.original.url}', '${block.title}')">
                 <figure>
                     <img src="${block.image.large.url}" alt="${block.title} by ${block.author}">
-                    <p>${block.title}</p>
                 </figure>
             </div>
         </li>
