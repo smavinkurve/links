@@ -70,7 +70,7 @@ h1 {
 
 .fixed-h1 {
     top: 10%;
-    left: 50%;
+    /* left: 50%; */
     transform: translate(-50%, -50%);
     text-align: center;
     margin: 0;
@@ -124,12 +124,12 @@ ul {
     margin-right: auto;
   }
 
-.block--text, .block--video, .block--link{
+.block--text, .block--video, .block--link, .block--pdf{
     display: none;
   }
 
 
-  /* FOOTER */
+/* FOOTER */
 footer {
     color: var(--dark-grey);
     text-align: center;
@@ -197,7 +197,7 @@ aside {
     line-height: calc(2* var(--font-size-base));
     width: 44%;
     margin: 2em;
-    top: 45%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;

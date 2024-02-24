@@ -40,7 +40,7 @@ let renderBlock = (block) => {
 				<picture>
 					<source media="(max-width: 428px)" srcset="${ block.image.thumb.url }">
 					<source media="(max-width: 640px)" srcset="${ block.image.large.url }">
-					<a href="${ block.source.url}" target="blank">
+					<a href="${ block.source.url}">
 					<img src="${block.image.original.url }">
 					<a>
 				</picture>
@@ -103,7 +103,7 @@ let renderBlock = (block) => {
 			let pdfItem =
 			`
 			<li class="block block--pdf">
-				<a href=" ${block.attachment.url}" target="blank">
+				<a href=" ${block.attachment.url}">
 					<figure>
 						<img src="${block.image.large.url}" alt="${block.title}">
 						<h2> ${block.title} </h2>
