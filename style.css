@@ -143,13 +143,7 @@ ul img {
     display: inline;
 }
 
-.block--audio iframe {
-    display: none;
-}
 
-.block--audio:hover iframe {
-    display: inline;
-}
 
 
 /* FOOTER */
@@ -204,7 +198,7 @@ footer {
     font-size: calc(1.1* var(--font-size-base));
     color: var(--white);
     position: absolute;
-    top: 9em;
+    top: 7em;
     right: 2em;
     border: none;
     cursor: pointer;
@@ -229,9 +223,17 @@ footer {
         } */
         
         ul li {
-            width: 15em;
-            height: 15em;
+            width: 21em;
+            height: 21em;
           }
+
+        /* TEXTBLOCK */
+        .block--text {
+        font-size: calc(1.1* var(--font-size-base));
+        line-height: calc(1.2* var(--line-height));
+        max-height: 21em;
+        max-width: 21em;
+    }
 
         /* LIGHTBOX */
         .lightbox-close-button {

@@ -107,7 +107,7 @@ aside {
 .collection {
     font-size: calc(1* var(--font-size-base));
     color: var(--white);
-    top: 30%;
+    top: 35%;
     text-align: center;
     position: fixed;
     text-decoration: underline;
