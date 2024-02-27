@@ -70,9 +70,9 @@ h1 {
 
 .fixed-h1 {
     top: 10%;
-    /* left: 50%; */
+    left: 50%;
     transform: translate(-50%, -50%);
-    text-align: center;
+    margin-right: auto;
     margin: 0;
     z-index: 4;
     color: var(--dark-grey);
@@ -124,13 +124,14 @@ ul {
     margin-right: auto;
   }
 
-.block--text, .block--video, .block--link, .block--pdf{
+.block--text, .block--video, .block--link, .block--pdf, .block--audio {
     display: none;
   }
 
 
 /* FOOTER */
 footer {
+    font-family: var(--base-font);
     color: var(--dark-grey);
     text-align: center;
     padding-top: 1em;

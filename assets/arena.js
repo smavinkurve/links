@@ -119,7 +119,7 @@ let renderBlock = (block) => {
 			// …still up to you, but here’s an `audio` element:
 			let audioItem =
 				`
-				<li>
+				<li class="block block--audio">
 					<p><em>Audio</em></p>
 					<audio controls src="${ block.attachment.url }"></audio>
 				</li>
@@ -140,7 +140,6 @@ let renderBlock = (block) => {
 				`
 				<li class="block block--video">
 					${ block.embed.html }
-					<img src="${block.image.thumb.url}" alt="${block.title}">
 					<h2> ${block.title} </h2>
 				</li>
 				`
