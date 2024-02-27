@@ -51,7 +51,7 @@ let renderBlock = (block) => {
 		channelBlocks.insertAdjacentHTML('beforeend', linkItem)
 	}
 
-	// Images! (SOME CHATGPT)
+	// Images!
 	// ** Removed // <p>${block.title}</p> from this  block
 	else if (block.class == 'Image') {
 		let imageItem =

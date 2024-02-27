@@ -121,7 +121,7 @@ ul img {
     font-family: var(--quote-font);
     font-size: calc(1* var(--font-size-base));
     line-height: calc(1.5* var(--line-height));
-    color: var(--dark-grey);
+    color: var(--white);
     background-color: var(--white);
 }
 
@@ -133,9 +133,16 @@ ul img {
     color: var(--dark-grey);
 }
 
-.block--text:hover p {
-    color: var(--dark-grey);
+
+/* LINKED VIDEO */
+.block--video iframe {
+    display: none;
 }
+
+.block--video:hover iframe {
+    display: inline;
+}
+
 
 
 
