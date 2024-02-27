@@ -67,6 +67,9 @@ let renderBlock = (block) => {
 	channelBlocks.insertAdjacentHTML('beforeend', imageItem)
 	}
 
+
+
+
 	// Text!
 	else if (block.class == 'Text') {
 		let textBlock =
@@ -168,27 +171,35 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 
 
 
-// Lightbox 
+// LIGHTBOX *********************************************************
 function openLightbox(imageUrl, title) {
-
+    // Create the lightbox container
     let lightbox = document.createElement('div');
     lightbox.classList.add('lightbox');
 
-   
+    // Create the close button
+    let closeButton = document.createElement('button');
+    closeButton.classList.add('lightbox-close-button');
+    closeButton.innerHTML = 'CLOSE';
+
+    // Add click event listener to close the lightbox
+    closeButton.addEventListener('click', function () {
+        document.body.removeChild(lightbox);
+    });
+
+    // Create the image element
     let image = document.createElement('img');
     image.src = imageUrl;
     image.alt = title;
 
+    // Append the close button, image, and lightbox to the document body
+    lightbox.appendChild(closeButton);
     lightbox.appendChild(image);
     document.body.appendChild(lightbox);
-
-    lightbox.addEventListener('click', function () {
-        document.body.removeChild(lightbox);
-    });
 }
 
 
-
+//*************************************************************************************
 // Now that we have said what we can do, go get the data:
 fetch(`https://api.are.na/v2/channels/${channelSlug}?per=100`, { cache: 'no-store' })
 	.then((response) => response.json()) // Return it as JSON data
