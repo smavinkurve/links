@@ -168,25 +168,20 @@ let renderUser = (user, container) => { // You can have multiple arguments for a
 
 
 
-// UNFORTUNATELY ENTIRELY CHATGPT
-// Function to open lightbox 
+// Lightbox 
 function openLightbox(imageUrl, title) {
-    // Create a lightbox container
+
     let lightbox = document.createElement('div');
     lightbox.classList.add('lightbox');
 
-    // Create an image element
+   
     let image = document.createElement('img');
     image.src = imageUrl;
     image.alt = title;
 
-    // Add the image to the lightbox container
     lightbox.appendChild(image);
-
-    // Append the lightbox container to the body
     document.body.appendChild(lightbox);
 
-    // Close the lightbox on click
     lightbox.addEventListener('click', function () {
         document.body.removeChild(lightbox);
     });

@@ -37,6 +37,7 @@
     --dark-grey:#0B0B0B;
     --white: #FFFFFF;
     --beige: rgb(237, 233, 222);
+    /* --beige: #F9F5EE; */
 }
 
 
@@ -140,14 +141,24 @@ footer {
     background-color: var(--white);
     color: var(--dark-grey);
     text-align: center;
-    padding-top: 1em;
+    padding-top: 2em;
     padding-bottom: 2em;
-    /* margin-top: 3em; */
-    /* position: fixed; */
     bottom: 0;
     width: 100%;
 }
 
+#channel-users {
+    color: var(--dark-grey);
+    font-family: var(--base-font);
+    font-size: var(--font-size-base);
+    display: flex;
+    gap: calc(2*var(--spacing));
+    text-transform: uppercase;
+    justify-content: center;
+    padding-bottom: 3em;
+    padding-top: -10em;
+
+}
 
  /* LIGHTBOX */
 .lightbox {
