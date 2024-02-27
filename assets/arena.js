@@ -26,7 +26,6 @@ let placeChannelInfo = (data) => {
 }
 
 
-
 // Then our big function for specific-block-type rendering:
 let renderBlock = (block) => {
 	// To start, a shared `ul` where we’ll insert all our blocks
@@ -140,6 +139,7 @@ let renderBlock = (block) => {
 				`
 				<li class="block block--video">
 					${ block.embed.html }
+
 					<h2> ${block.title} </h2>
 				</li>
 				`
