@@ -47,6 +47,10 @@
     display: none;
 }
 
+a {
+    text-decoration: underline;
+}
+
 body{
     background-color: var(--beige);
     scroll-behavior: smooth;
