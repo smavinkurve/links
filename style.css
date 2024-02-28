@@ -169,7 +169,7 @@ footer {
     font-family: var(--base-font);
     font-size: var(--font-size-base);
     display: flex;
-    gap: calc(6*var(--spacing));
+    gap: calc(4*var(--spacing));
     text-transform: uppercase;
     justify-content: center;
     padding-bottom: 3em;
