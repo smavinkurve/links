@@ -222,9 +222,6 @@ footer {
             font-size: calc(6* var(--font-size-base));
         }
 
-        body {
-            background-color: var(--white);
-        }
         
         ul li {
             width: 21em;
@@ -264,10 +261,6 @@ footer {
 /* ******************************************************************* */
 /* MEDIA QUERIES - LAPTOPS and LARGER SCREENS */
 @media (min-width: 1200px) {
-
-    /* body {
-        background-color: var(--white);
-    } */
 
     ul {
         margin-top: 5em;
